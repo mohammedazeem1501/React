@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Arrow Functions</title>
+  </head>
+  <body>
+    <ul>
+      <li data-time="5:17">Flexbox Video</li>
+      <li data-time="8:22">Flexbox Video</li>
+      <li data-time="3:34">Redux Video</li>
+      <li data-time="5:23">Flexbox Video</li>
+      <li data-time="7:12">Flexbox Video</li>
+      <li data-time="7:24">Redux Video</li>
+      <li data-time="6:46">Flexbox Video</li>
+      <li data-time="4:45">Flexbox Video</li>
+      <li data-time="4:40">Flexbox Video</li>
+      <li data-time="7:58">Redux Video</li>
+      <li data-time="11:51">Flexbox Video</li>
+      <li data-time="9:13">Flexbox Video</li>
+      <li data-time="5:50">Flexbox Video</li>
+      <li data-time="5:52">Redux Video</li>
+      <li data-time="5:49">Flexbox Video</li>
+      <li data-time="8:57">Flexbox Video</li>
+      <li data-time="11:29">Flexbox Video</li>
+      <li data-time="3:07">Flexbox Video</li>
+      <li data-time="5:59">Redux Video</li>
+      <li data-time="3:31">Flexbox Video</li>
+    </ul>
+<script type="text/javascript">
+  console.log("1. Select all the list items on the page and convert them to array : ");
+  const items = Array.from(document.querySelectorAll('[data-time]'));  // used querySelectorAll to select the data from html page and stored it in items
+  for(let element of items)
+  {
+    console.log(element);
+  }
+  console.log("2. Filter for only the elements that contain the word 'flexbox'");
+  let flexboxItems = items.filter((item)=>item.innerText.includes('Flexbox')); //used filter() to filter out desired array from an array
+  for(let element of flexboxItems)
+  {
+    console.log(element);
+  }
+  console.log("3. Map down to a list of items strings");
+  const timeStringItems = flexboxItems.map(item=>item.dataset.time);  // used map() to map it in an array with time only.
+  console.log(timeStringItems);
+
+  let total=0;
+  console.log("4. Map to an array of seconds");
+  let secondsArray = timeStringItems.map(time =>{
+    const seconds = time.split(':').map(e => parseInt(e)); // splited the time in seconds and minuted from '':' that I mapped in abve part and summed up accordingly
+    return(seconds[0]*60 + seconds[1]);
+  });
+  console.log(secondsArray);
+
+  console.log("5. Reduce to get a total using .filter() and .map()");
+  const reducer = (acc,current) => acc+current;
+  console.log(secondsArray.reduce(reducer));
+</script>
+
+  </body>
+</html>

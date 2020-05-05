@@ -1,0 +1,44 @@
+.border{
+    box-sizing: border-box;
+}
+
+.table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.td {
+    font-size: large;
+    height: 25px;
+    width: 100px;
+    border: 2px solid rgba(0, 0, 0, 0.089);
+}
+
+.button{
+    background-color:red;
+    width: 100px;
+    height: 25px;
+}
+
+
+.button:hover{
+    background-color:salmon;   
+}
+
+.submit{
+    background-color: greenyellow;
+    height: 30px;
+    width: 100px;
+}
+
+.submit:hover{
+    background-color: lightgreen;
+}
+
+.input{
+    height: 25px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid grey;
+}

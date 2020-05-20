@@ -11,7 +11,6 @@ describe('auth reducer', () => {
             authRedirectPath: '/'
         });
     });
-
     it('should store the token upon login', () => {
         expect(reducer({
             token: null,
